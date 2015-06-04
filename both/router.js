@@ -4,6 +4,9 @@ Router.configure({
 
 Router.map(function() {
   this.route('contacts', {
+    path: '/contacts'
+  });
+  this.route('map', {
     path: '/'
   });
 
@@ -11,3 +14,8 @@ Router.map(function() {
     path: '/contacts/:_id'
   });
 });
+
+Router.onBeforeAction(function() {
+  GoogleMaps.load();
+  this.next();
+}, { only: ['map'] });

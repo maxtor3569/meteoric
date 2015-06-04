@@ -1,0 +1,20 @@
+<template name="map">
+  <style>
+  .map-container {
+  max-width: 100%;
+  height: 500px;
+}
+</style>
+  {{#contentFor "headerTitle"}}
+  <h1 class="title">TEAMSPORT</h1>
+  {{/contentFor}}
+
+
+  {{#ionView}}
+  {{#ionContent}}
+  <div class="map-container">
+    {{> googleMap name="exampleMap" options=exampleMapOptions}}
+  </div>
+  {{/ionContent}}
+  {{/ionView}}
+</template>
