@@ -21,3 +21,6 @@ dburles:google-maps
 cfs:standard-packages
 cfs:filesystem
 mdg:geolocation
+yogiben:admin
+twbs:bootstrap
+fortawesome:fontawesome

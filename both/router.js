@@ -6,6 +6,12 @@ Router.map(function() {
   this.route('contacts', {
     path: '/contacts'
   });
+  this.route('players.show', {
+   path: '/player/:_id'
+ });
+  this.route('userAccounts', {
+    path: '/login'
+  });
   this.route('map', {
     path: '/'
   });
