@@ -15,8 +15,9 @@ Template.playersShow.rendered = function () {
 };
 
 Template.playersShow.helpers({
-  contact: function () {
-    return Contacts.findOne({_id: Router.current().params._id});
+  player: function () {
+    console.log(Meteor.users.findOne({_id: Router.current().params._id}));
+    return Meteor.users.findOne({_id: Router.current().params._id});
   },
 
   activeLabel: function () {

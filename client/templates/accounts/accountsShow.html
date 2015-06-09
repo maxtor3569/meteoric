@@ -4,21 +4,21 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Details</h1>
+    <h1 class="title">{{ player.profile.firstName }} {{ player.profile.lastName }} profile</h1>
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear" data-ion-modal="_contactsEdit" data-id="{{contact._id}}">Edit</button>
+    <button class="button button-clear" data-ion-modal="_contactsEdit" data-id="{{player._id}}">Edit</button>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent class="padding contact-detail"}}
-      {{#with contact}}
+      {{#with player}}
         <div class="list card">
 
           <div class="item item-avatar">
             <img src="{{avatarUrl}}">
-            <h2>name test</h2>
+            <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
             <p>Test, ddssd</p>
           </div>
 
