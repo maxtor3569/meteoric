@@ -1,7 +1,7 @@
 Template._contactsEdit.helpers({
   player: function () {
     var template = Template.instance();
-    console.log(template.data);
+    //console.log(template.data);
     return Meteor.users.findOne({_id: template.data.id});
   }
 });

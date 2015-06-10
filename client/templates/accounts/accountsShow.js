@@ -1,6 +1,8 @@
 Template.playersShow.created = function () {
   this.autorun(function () {
     this.subscription = Meteor.subscribe('player', Router.current().params._id);
+    this.subscription = Meteor.subscribe('sports');
+    this.subscription = Meteor.subscribe('images');
   }.bind(this));
 };
 
@@ -16,8 +18,12 @@ Template.playersShow.rendered = function () {
 
 Template.playersShow.helpers({
   player: function () {
-    console.log(Meteor.users.findOne({_id: Router.current().params._id}));
+    //console.log(Meteor.users.findOne({_id: Router.current().params._id}));
     return Meteor.users.findOne({_id: Router.current().params._id});
+  },
+
+  picture: function () {
+    return Images.findOne(Meteor.users.findOne({_id: Router.current().params._id}).profile.picture); // Where Images is an FS.Collection instance
   },
 
   activeLabel: function () {

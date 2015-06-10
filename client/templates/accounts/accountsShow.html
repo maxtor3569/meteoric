@@ -13,12 +13,11 @@
 
   {{#ionView}}
     {{#ionContent class="padding contact-detail"}}
-      {{#with player}}
         <div class="list card">
-
+          {{profile.picture}}
           <div class="item item-avatar">
-            <img src="{{avatarUrl}}">
-            <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
+            <img src="{{ picture.url }}">
+            <h2>{{ player.profile.firstName }} {{ player.profile.lastName }}</h2>
             <p>Test, ddssd</p>
           </div>
 
@@ -46,7 +45,7 @@
           </div>
 
         </div>
-      {{/with}}
+
     {{/ionContent}}
   {{/ionView}}
 </template>

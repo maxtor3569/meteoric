@@ -7,9 +7,11 @@
         <button type="submit" class="button button-positive button-clear">Save</button>
       </div>
       <div class="content has-header overflow-scroll">
+        {{> afQuickField name="profile.picture"}}
         {{> afQuickField name="profile.firstName" }}
         {{> afQuickField name="profile.lastName" }}
         {{> afQuickField name="profile.sports" }}
+
       </div>
     {{/autoForm}}
   {{/ionModal}}
