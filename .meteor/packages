@@ -26,3 +26,5 @@ twbs:bootstrap
 fortawesome:fontawesome
 dburles:collection-helpers
 yogiben:autoform-file
+momentjs:moment
+cfs:graphicsmagick

@@ -1,4 +1,4 @@
-Games = new Meteor.Collection('games');
+Games = new Meteor.Collection('Games');
 
 Schemas = {};
 
@@ -41,4 +41,5 @@ Schemas.Games = new SimpleSchema({
     }
 
 });
+
 Games.attachSchema(Schemas.Games);
