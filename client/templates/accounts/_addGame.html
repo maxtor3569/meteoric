@@ -1,9 +1,29 @@
 <template name="_addGame">
-  {{#ionModal customTemplate=true}}
-    Sport played?
-    Message
-    <textarea>Write a message</textarea>
 
-    <button type="submit" class="ui green submit button">Save</button>
+  {{#ionModal customTemplate=true}}
+  {{#autoForm collection="Games" id="new-game-form" type="insert"}}
+    <div class="bar bar-header bar-stable">
+      <button data-dismiss="modal" type="button" class="button button-clear">Back</button>
+      <h2 class="title">I'm currently playing </h2>
+
+    </div>
+    <div class="content has-header overflow-scroll">
+      {{> afQuickField name="content"}}
+      {{> afQuickField name="sports"}}
+
+      <label class="item item-input">
+        <span class="input-label">Place</span>
+        <input type="text" id="autocomplete-address" />
+        <input type="hidden" id="lat" />
+        <input type="hidden" id="lon" />
+        <input type="hidden" id="address" />
+      </label>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  {{/autoForm}}
   {{/ionModal}}
+  <style>
+  .modal-open {pointer-events: all}
+  .modal {height:500px;}
+  </style>
 </template>

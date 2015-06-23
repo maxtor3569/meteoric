@@ -17,3 +17,7 @@ Meteor.publish('player', function(_id) {
 Meteor.publish('games', function() {
   return Games.find();
 });
+
+Meteor.publish('places', function() {
+  return Places.find();
+});

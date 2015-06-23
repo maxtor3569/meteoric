@@ -3,9 +3,10 @@ Router.configure({
 });
 
 Router.map(function() {
-  this.route('contacts', {
-    path: '/contacts'
+  this.route('playerList', {
+    path: '/players'
   });
+
   this.route('players.show', {
    path: '/player/:_id'
  });
@@ -22,6 +23,6 @@ Router.map(function() {
 });
 
 Router.onBeforeAction(function() {
-  GoogleMaps.load();
+  GoogleMaps.load({ libraries: 'places' });
   this.next();
 }, { only: ['map'] });
