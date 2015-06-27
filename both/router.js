@@ -23,6 +23,6 @@ Router.map(function() {
 });
 
 Router.onBeforeAction(function() {
-  GoogleMaps.load({ libraries: 'places' });
+  //GoogleMaps.load({ libraries: 'places' });
   this.next();
 }, { only: ['map'] });
