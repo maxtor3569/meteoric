@@ -21,6 +21,10 @@ Template.playersShow.helpers({
     //console.log(Meteor.users.findOne({_id: Router.current().params._id}));
     return Meteor.users.findOne({_id: Router.current().params._id});
   },
+  get_sport_label: function(id)
+  {
+    return  Sports.findOne({_id: id}).label;
+  },
 
   picture: function () {
     return Images.findOne(Meteor.users.findOne({_id: Router.current().params._id}).profile.picture); // Where Images is an FS.Collection instance

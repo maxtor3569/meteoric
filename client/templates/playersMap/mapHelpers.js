@@ -15,6 +15,7 @@ Template.map.helpers({
         });*/
       }
 
+
       // Map initialization options
       return {
         center: new google.maps.LatLng(33,33),
@@ -58,6 +59,7 @@ Template.map.onCreated(function() {
               var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(place.lat,place.lon),
                 map: map.instance,
+                game: m._id,
                 icon: image_profile.url({store: 'thumbs_maps'})
               });
 
@@ -65,6 +67,10 @@ Template.map.onCreated(function() {
               //new google.maps.event.clearListeners(map); not work
               map.instance.setCenter(new google.maps.LatLng(place.lat,place.lon));
               map.instance.setZoom(15);
+
+              new google.maps.event.addListener(marker, 'click', function() {
+                IonModal.open('_markerDialog',this.game);
+              });
 
 
             });
