@@ -1,0 +1,59 @@
+<template name="_markerDialog">
+  {{#ionModal customTemplate=true}}
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8">
+                <h2>{{ player.profile.firstName }} {{ player.profile.lastName }}</h2>
+                <p>{{ game.content }}</p>
+                <p><strong>Currently playing: </strong> </p>
+                <p><strong>Payment: </strong>
+                  <span class="label label-info tags">Cash</span>
+                  <span class="label label-info tags">Western Union</span>
+                  <span class="label label-info tags">Bank Transfer</span>
+                  <span class="label label-info tags">BTC</span>
+                  <span class="label label-info tags">Westpac</span>
+                </p>
+              </div><!--/col-->
+              <div class="col-xs-12 col-sm-4 text-center">
+                <img src="{{picture.url}}" alt="" class="center-block img-circle img-responsive">
+                <ul class="list-inline ratings text-center" title="Ratings">
+                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                </ul>
+              </div><!--/col-->
+
+              <div class="col-xs-12 col-sm-4">
+                <!-- <h2><strong> 20,7K </strong></h2>
+                <p><small>Followers</small></p> -->
+                <button class="btn btn-success btn-block" data-action="route"><span class="fa fa-plus-circle"></span> Itenary </button>
+              </div><!--/col-->
+              <div class="col-xs-12 col-sm-4">
+                <!-- <h2><strong>245</strong></h2>
+                <p><small>Following</small></p> -->
+                <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+              </div><!--/col-->
+              <div class="col-xs-12 col-sm-4">
+                <!-- <h2><strong>43</strong></h2>
+                <p><small>Snippets</small></p> -->
+                <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Message </button>
+              </div><!--/col-->
+            </div><!--/row-->
+          </div><!--/panel-body-->
+        </div><!--/panel-->
+
+
+
+      </div>
+    </div>
+  </div>
+
+  {{/ionModal}}
+</template>
