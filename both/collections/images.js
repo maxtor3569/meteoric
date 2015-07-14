@@ -14,7 +14,7 @@ Images = new FS.Collection("images", {
         new FS.Store.FileSystem("thumbs_maps", {
                 transformWrite: function(fileObj, readStream, writeStream) {
                     // Transform the image into a 10x10px thumbnail
-                    gm(readStream, fileObj.name()).resize('50', '50').stream().pipe(writeStream);
+                    gm(readStream, fileObj.name()).resize('25', '25').stream().pipe(writeStream);
                 },
                 path:"~/uploads/thumbs_maps"
             }

@@ -1,6 +1,6 @@
 <template name="playerList">
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton path="index"}}
+    {{>ionNavBackButton path="map"}}
   {{/contentFor}}
   {{#contentFor "headerTitle"}}
     <h1 class="title">Lists</h1>
@@ -20,7 +20,7 @@
 
             <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
             <p>
-              (555) 555-1212
+              {{ profile.phone }}
             </p>
             <button class="button button-positive">{{> ionIcon icon="ios-telephone"}}</button>
 

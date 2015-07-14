@@ -9,15 +9,13 @@
     </div>
     <div class="content has-header overflow-scroll">
       {{> afQuickField name="content"}}
-      {{> afQuickField name="sports"}}
+      {{> afQuickField name="sport" options=sportOptions}}
+      {{> afQuickField name="place"}}
 
-      <label class="item item-input">
-        <span class="input-label">Place</span>
-        <input type="text" id="autocomplete-address" />
         <input type="hidden" id="lat" />
         <input type="hidden" id="lon" />
         <input type="hidden" id="address" />
-      </label>
+  
       <button type="submit" class="btn btn-primary">Save</button>
     </div>
   {{/autoForm}}

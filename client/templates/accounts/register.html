@@ -1,0 +1,21 @@
+<template name="signup">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton }}
+  {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Sign up</h1>
+  {{/contentFor}}
+  {{#ionView}}
+    {{#ionContent}}
+  {{#autoForm collection="Meteor.users" id="signUp" type="insert"}}
+    {{> afQuickField name='email'}}
+    {{> afQuickField name='password'}}
+    {{> afQuickField name='profile.firstName'}}
+    {{> afQuickField name='profile.lastName'}}
+    <div class="form-group">
+      <button type="submit" class="button button-positive  button-block">Register</button>
+    </div>
+    {{/autoForm}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

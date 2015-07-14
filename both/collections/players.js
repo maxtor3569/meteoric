@@ -3,6 +3,10 @@ Schemas.UserProfile = new SimpleSchema({
     type: String,
     optional: true
   },
+  phone: {
+    type: String,
+    optional: true
+  },
   lastName: {
     type: String,
     optional: true
@@ -24,6 +28,7 @@ Schemas.UserProfile = new SimpleSchema({
         collection: 'Images'
       }
     },
+    optional: true,
     label: 'Profile picture'
   },
   photos: {
@@ -109,26 +114,33 @@ var userSchemaObj = {
     type: String,
     optional: true
   },
-  emails: {
-    type: [Object],
-    optional: true // TODO :need fix for facebook login
+  email: {
+       type: String,
+       regEx: SimpleSchema.RegEx.Email
+   },
+   password: {
+     type: String,
+     label: "Password",
+     min: 6
+   },
 
-  },
-  "emails.$.address": {
-    type: String,
-    regEx: SimpleSchema.RegEx.Email
-  },
-  "emails.$.verified": {
-    type: Boolean
-  },
 
-  "roles": {
+  /*"roles": {
     type: [String],
     optional: true
-  },
+  },*/
 
   createdAt: {
-    type: Date
+    type: Date,
+    autoValue: function() {
+        if (this.isInsert) {
+            return new Date;
+        } else if (this.isUpsert) {
+            return {$setOnInsert: new Date};
+        } else {
+            this.unset();
+        }
+    }
   },
   profile: {
     type: Schemas.UserProfile,

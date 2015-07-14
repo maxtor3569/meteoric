@@ -6,20 +6,9 @@ Schemas.Games = new SimpleSchema({
     content: {
         type: String
     },
-    sports: {
-        type: [String],
-        optional:true,
-        autoform: {
-          type: "select-checkbox",
-          options: function() {
-            return Sports.find().map(function(c) {
-              return {
-                label: c.label,
-                value: c._id
-              };
-            });
-          }
-        }
+    sport: {
+        type: String,
+        optional:true
     },
     createdAt: {
         type: Date,
@@ -46,7 +35,13 @@ Schemas.Games = new SimpleSchema({
 
     place: {
         type: String,
-        optional: true
+        optional:false,
+        autoform: {
+           afFieldInput: {
+             type: "text",
+             id: "autocomplete-address"
+           }
+         }
 
     },
     user: {

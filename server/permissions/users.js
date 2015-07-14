@@ -1,4 +1,4 @@
-Places.allow({
+Meteor.users.allow({
     insert: function(userId, doc){
         return true;
     },

@@ -2,15 +2,17 @@ Template._markerDialog.helpers({
   player: function () {
     var template = Template.instance();
     //console.log(template.data);
-    var game = Games.findOne({_id: template.data});
-
-    return Meteor.users.findOne({_id: game.user});
+    //var game = Games.findOne({_id: template.data});
+    //return Meteor.users.findOne({_id: game.user});
+    return template.data;
     //return ;
   },
   picture: function () {
     var template = Template.instance();
-    var game = Games.findOne({_id: template.data});
-    return Images.findOne(Meteor.users.findOne({_id: game.user}).profile.picture); // Where Images is an FS.Collection instance
+    //var game = Games.findOne({_id: template.data});
+    var user = template.data;
+    //return Images.findOne(Meteor.users.findOne({_id: game.user}).profile.picture); // Where Images is an FS.Collection instance
+    return Images.findOne(user.profile.picture);
   },
   game: function () {
     var template = Template.instance();
@@ -18,17 +20,24 @@ Template._markerDialog.helpers({
 
   }
 });
+var directionsDisplay;
+GoogleMaps.ready('exampleMap', function(map) {
+
+   directionsDisplay = new google.maps.DirectionsRenderer();
+
+});
 Template._markerDialog.events({
   'click [data-action=route]': function (event,template) {
         event.preventDefault();
+        var template = Template.instance();
+        var user = template.data;
         //console.log(template);
         var lat = Geolocation.latLng().lat;
         var lng = Geolocation.latLng().lng;
-        var game = Games.findOne({_id: template.data});
-        var place = Places.findOne({_id: game.place});
+        //var game = Games.findOne({_id: template.data});
+        //var place = Places.findOne({_id: game.place});
         var map = GoogleMaps.maps.exampleMap;
 
-        var directionsDisplay = new google.maps.DirectionsRenderer();
         directionsDisplay.setMap(map.instance);
         var directionsService = new google.maps.DirectionsService();
         var start = new google.maps.LatLng(lat, lng);
@@ -64,7 +73,35 @@ Template._markerDialog.events({
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
         });
+        IonModal.close();
+
+  },
+  'click [data-action=profile]': function (event,template) {
+      event.preventDefault();
+      var template = Template.instance();
+      //console.log(template.data);
+      //var game = Games.findOne({_id: template.data});
+      Router.go('players.show', {_id: template.data._id});
+      IonModal.close();
+  },
+  'click [data-action=invite-play]': function (event,template) {
+      event.preventDefault();
+      var template = Template.instance();
+      //console.log(template.data);
+      //var game = Games.findOne({_id: template.data});
+      Push.debug = true;
+      Push.send({
+        from: 'Test',
+        title: 'Hello',
+        text: 'World',
+        badge: 12,
+        query: {
+          userId: template.data._id
+        }
+      });
 
   }
+
+
 
 });

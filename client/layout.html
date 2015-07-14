@@ -34,37 +34,6 @@
 
         {{> ionNavBar class="bar-positive"}}
 
-        {{#contentFor "headerButtonLeft"}}
-        <button class="button button-clear pull-left" data-ion-menu-toggle="left">
-          {{#if isAndroid}}
-            {{> ionIcon icon='android-more-vertical'}}
-            {{else}}
-            {{> ionIcon icon='navicon'}}
-          {{/if}}
-        </button>
-        {{/contentFor}}
-
-        {{#contentFor "headerTitle"}}
-        <h1 class="title">TEAMSPORT</h1>
-
-        {{/contentFor}}
-        {{#contentFor "headerButtonRight"}}
-        {{#if currentUser}}
-        <a href="player/{{currentUser._id}}" class="button button-clear pull-right">
-          <button class="button button-clear pull-right">
-             Maxime
-          </button>
-        </a>
-        {{ else }}
-        <a href="/login" class="button button-clear pull-right">
-        <button class="button button-clear pull-right">
-          Login
-        </button>
-      </a>
-      {{/if}}
-        {{/contentFor}}
-
-
         {{#ionNavView}}
           {{> yield}}
         {{/ionNavView}}

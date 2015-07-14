@@ -1,10 +1,11 @@
 <template name="userAccounts">
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton path="index"}}
+    {{>ionNavBackButton}}
   {{/contentFor}}
   {{#contentFor "headerTitle"}}
-    <h1 class="title">User Accounts</h1>
+    <h1 class="title">Login</h1>
   {{/contentFor}}
+
 
   {{#ionView}}
     {{#ionContent}}
@@ -13,7 +14,15 @@
           <button class="button button-positive button-block" data-action="logout">Log Out</button>
         </div>
       {{else}}
-        {{> atForm}}
+        LOGIN to teamsport
+      {{#autoForm collection="Meteor.users" id="signIn"}}
+        {{> afQuickField name='email'}}
+        {{> afQuickField name='password'}}
+        <div class="form-group">
+          <button type="submit" class="button button-positive  button-block">Login</button>
+        </div>
+        {{/autoForm}}
+         Don't have an account yet <a href="signup">Register</a>
       {{/if}}
     {{/ionContent}}
   {{/ionView}}

@@ -39,3 +39,7 @@ Template.layout.events({
   }
 
 })
+/* Supress swipe
+Template.templateName.rendered = function () {
+    IonSideMenu.snapper.settings({touchToDrag: false});
+};*/

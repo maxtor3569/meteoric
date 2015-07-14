@@ -6,13 +6,18 @@ AutoForm.hooks({
     },
 
     onError: function(operation, error, template) {
-      alert(error);
+      //alert(error);
     },
     before: {
       // Replace `formType` with the form `type` attribute to which this hook applies
       insert: function(doc) {
           var user = null;
-          user = Meteor.user()._id;
+          if(Meteor.user())
+            user = Meteor.user()._id;
+          else {
+            Router.go('userAccounts');
+            IonModal.close();
+          }
           doc.user = user;
 
         var id = Places.insert({
@@ -48,3 +53,17 @@ Template._addGame.rendered = function() {
     //console.log("place: " + JSON.stringify(place) );
   });
 }
+
+Template._addGame.helpers({
+  sportOptions: function () {
+    return Sports.find().map(function (c) {
+      return {label: c.label, value: c._id};
+    });
+  }
+});
+
+Template._addGame.onCreated(function() {
+  this.autorun(function () {
+    this.subscription = Meteor.subscribe('sports');
+  }.bind(this));
+});
