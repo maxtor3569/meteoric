@@ -7,7 +7,7 @@ Schemas.Sports = new SimpleSchema({
         type: String,
         optional : true
     },
-    
+
 
 
 });

@@ -1,4 +1,6 @@
-Schemas.UserProfile = new SimpleSchema({
+Schema = {};
+
+Schema.UserProfile = new SimpleSchema({
   firstName: {
     type: String,
     optional: true
@@ -104,46 +106,38 @@ Schemas.UserProfile = new SimpleSchema({
   },
 
   /*country: {
-   type: Schema.UserCountry,
-   optional: true
-   }*/
+  type: Schema.UserCountry,
+  optional: true
+  }*/
 });
 
-var userSchemaObj = {
-  _id: {
-    type: String,
-    optional: true
+Schema.User = new SimpleSchema({
+  emails: {
+    type: [Object]
   },
-  email: {
-       type: String,
-       regEx: SimpleSchema.RegEx.Email
-   },
-   password: {
-     type: String,
-     label: "Password",
-     min: 6
-   },
-
-
-  /*"roles": {
-    type: [String],
-    optional: true
-  },*/
+  "emails.$.address": {
+    type: String,
+    regEx: SimpleSchema.RegEx.Email
+  },
+  "emails.$.verified": {
+    type: Boolean
+  },
 
   createdAt: {
     type: Date,
+    optional: true,
     autoValue: function() {
-        if (this.isInsert) {
-            return new Date;
-        } else if (this.isUpsert) {
-            return {$setOnInsert: new Date};
-        } else {
-            this.unset();
-        }
+      if (this.isInsert) {
+        return new Date;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: new Date};
+      } else {
+        this.unset();
+      }
     }
   },
   profile: {
-    type: Schemas.UserProfile,
+    type: Schema.UserProfile,
     optional: true
   },
 
@@ -175,9 +169,6 @@ var userSchemaObj = {
 
 
 
-};
+});
 
-
-Schemas.User = new SimpleSchema(userSchemaObj);
-
-Meteor.users.attachSchema(Schemas.User);
+Meteor.users.attachSchema(Schema.User);

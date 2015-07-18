@@ -16,7 +16,6 @@ meteoric:ionic-sass
 meteoric:ionicons-sass
 meteoric:ionic
 meteoric:autoform-ionic
-useraccounts:ionic
 dburles:google-maps
 cfs:standard-packages
 cfs:filesystem
@@ -29,3 +28,5 @@ yogiben:autoform-file
 momentjs:moment
 cfs:graphicsmagick
 raix:push
+msavin:mongol
+accounts-base

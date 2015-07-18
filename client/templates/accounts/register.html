@@ -1,21 +1,46 @@
 <template name="signup">
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton }}
+  {{>ionNavBackButton path="map" }}
   {{/contentFor}}
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Sign up</h1>
+  <h1 class="title">Sign up</h1>
   {{/contentFor}}
   {{#ionView}}
-    {{#ionContent}}
-  {{#autoForm collection="Meteor.users" id="signUp" type="insert"}}
-    {{> afQuickField name='email'}}
-    {{> afQuickField name='password'}}
-    {{> afQuickField name='profile.firstName'}}
-    {{> afQuickField name='profile.lastName'}}
+  {{#ionContent}}
+  <form id="signUp" novalidate="novalidate">
+    <label class="item item-input">
+      <span class="input-label">Email</span>
+
+      <input type="text" name="email" required="">
+
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="text" name="password">
+    </label>
+
+    <label class="item item-input">
+
+      <span class="input-label">First name</span>
+      <input type="text" name="firstName">
+
+    </label>
+
+    <label class="item item-input">
+
+      <span class="input-label">Last name</span>
+
+      <input type="text" name="lastName">
+
+    </label>
+
     <div class="form-group">
-      <button type="submit" class="button button-positive  button-block">Register</button>
+      <button type="submit" class="button button-positive button-block">Register</button>
     </div>
-    {{/autoForm}}
-    {{/ionContent}}
+
+
+  </form>
+  {{/ionContent}}
   {{/ionView}}
 </template>
