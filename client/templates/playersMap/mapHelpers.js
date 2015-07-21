@@ -2,27 +2,33 @@ Template.map.helpers({
   exampleMapOptions: function() {
     // Make sure the maps API has loaded
     if (GoogleMaps.loaded()) {
+      //load all current players position
+      GoogleMaps.ready('exampleMap', function(map) {
+        var players = Meteor.users.find();
+        players.forEach(function(entry) {
+          console.log(entry);
+            if(entry.profile.loc)
+            {
+              var lat = entry.profile.loc.coordinates[0];
+              var lng = entry.profile.loc.coordinates[1];
+              var picture_id = entry.profile.picture;
 
-      if(Geolocation.latLng()!= null)
-      {
-        var lat = Geolocation.latLng().lat;
-        var lng = Geolocation.latLng().lng;
-        var picture_id = null;
-        if(Meteor.user())
-        var picture_id = Meteor.user().profile.picture;
+              image_profile = Images.findOne({_id : picture_id});//XFpQzWJkXvtzqdAXj
+              map.instance.setCenter(new google.maps.LatLng(lat,lng));
+              var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat,lng),
+                map: map.instance,
+                user: entry,
+                icon: image_profile.url({store: 'thumbs_maps'})
+              });
+              new google.maps.event.addListener(marker, 'click', function() {
+                IonModal.open('_markerDialog',entry);
+              });
 
-        image_profile = Images.findOne({_id : picture_id});//XFpQzWJkXvtzqdAXj
-        GoogleMaps.maps.exampleMap.instance.setCenter(new google.maps.LatLng(lat,lng));
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(lat,lng),
-          map: GoogleMaps.maps.exampleMap.instance,
-          user: Meteor.user(),
-          icon: image_profile.url({store: 'thumbs_maps'})
+            }
         });
-        new google.maps.event.addListener(marker, 'click', function() {
-          IonModal.open('_markerDialog',Meteor.user());
-        });
-      }
+
+      });
 
 
       // Map initialization options
@@ -131,6 +137,21 @@ Template.map.rendered = function() {
   this.subscription = Meteor.subscribe('images');
   this.subscription = Meteor.subscribe('sports');
   this.subscription = Meteor.subscribe('places');
+  this.subscription = Meteor.subscribe('players');
+  Tracker.autorun(function () {
+    if(Geolocation.latLng()!= null)
+    {
+      var lat = Geolocation.latLng().lat;
+      var lng = Geolocation.latLng().lng;
+      if(Meteor.user())
+      {
+        var coords = [lat,lng];
+        var loc = {type:"Point",coordinates:coords};
+        Meteor.users.update(
+          { _id: Meteor.userId() }, { $set: { 'profile.loc': loc }} );
+      }
+    }
+  });
 
 
 };

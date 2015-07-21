@@ -14,14 +14,21 @@
           <button class="button button-positive button-block" data-action="logout">Log Out</button>
         </div>
       {{else}}
-        LOGIN to teamsport
-      {{#autoForm collection="Meteor.users" id="signIn"}}
-        {{> afQuickField name='email'}}
-        {{> afQuickField name='password'}}
+      <form id="signIn" novalidate="novalidate">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="text" name="email" required="">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="text" name="password">
+        </label>
+
         <div class="form-group">
           <button type="submit" class="button button-positive  button-block">Login</button>
         </div>
-        {{/autoForm}}
+      </form>
          Don't have an account yet <a href="signup">Register</a>
       {{/if}}
     {{/ionContent}}

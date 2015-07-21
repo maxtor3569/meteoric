@@ -87,9 +87,9 @@ Template._markerDialog.events({
   'click [data-action=invite-play]': function (event,template) {
       event.preventDefault();
       var template = Template.instance();
-      //console.log(template.data);
+      console.log(template.data);
       //var game = Games.findOne({_id: template.data});
-      Push.debug = true;
+      
       Push.send({
         from: 'Test',
         title: 'Hello',

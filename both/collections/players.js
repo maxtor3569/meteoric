@@ -22,6 +22,22 @@ Schema.UserProfile = new SimpleSchema({
     allowedValues: ['Male', 'Female'],
     optional: true
   },
+  loc: {
+    type: Object,
+    index: '2dsphere',
+    label: "Location"
+  },
+  "loc.type": {
+    type: String,
+    allowedValues: ["Point"],
+    label: "Start location type"
+  },
+  "loc.coordinates": {
+    type: [Number],
+    minCount: 2,
+    maxCount: 2,
+    decimal: true
+  },
   picture: {
     type: String,
     autoform: {

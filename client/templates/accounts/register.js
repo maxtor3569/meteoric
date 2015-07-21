@@ -11,14 +11,13 @@ Template.signup.created = function () {
     this.subscription = Meteor.subscribe('players');
   }.bind(this));
 };
+
 Template.signup.events({
   'submit #signUp': function(e, t) {
     e.preventDefault();
 
     var email = e.target.email.value,
     password = e.target.password.value
-
-
     ;
     var profile = {firstName:e.target.firstName.value,lastName:e.target.lastName.value};
 
