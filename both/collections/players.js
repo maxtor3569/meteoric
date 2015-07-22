@@ -25,7 +25,8 @@ Schema.UserProfile = new SimpleSchema({
   loc: {
     type: Object,
     index: '2dsphere',
-    label: "Location"
+    label: "Location",
+    optional: true
   },
   "loc.type": {
     type: String,
