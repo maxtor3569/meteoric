@@ -6,7 +6,7 @@ Template.map.helpers({
       GoogleMaps.ready('exampleMap', function(map) {
         var players = Meteor.users.find();
         players.forEach(function(entry) {
-          console.log(entry);
+            //console.log(entry);
             if(entry.profile.loc)
             {
               var lat = entry.profile.loc.coordinates[0];
@@ -15,12 +15,24 @@ Template.map.helpers({
 
               image_profile = Images.findOne({_id : picture_id});//XFpQzWJkXvtzqdAXj
               map.instance.setCenter(new google.maps.LatLng(lat,lng));
-              var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(lat,lng),
-                map: map.instance,
-                user: entry,
-                icon: image_profile.url({store: 'thumbs_maps'})
-              });
+              if(image_profile)
+              {
+                var marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(lat,lng),
+                  map: map.instance,
+                  user: entry,
+                  icon: image_profile.url({store: 'thumbs_maps'})
+                });
+              }
+              else
+              {
+                var marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(lat,lng),
+                  map: map.instance,
+                  user: entry
+                });
+              }
+
               new google.maps.event.addListener(marker, 'click', function() {
                 IonModal.open('_markerDialog',entry);
               });

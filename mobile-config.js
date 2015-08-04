@@ -13,6 +13,8 @@ App.info({
   'android_hdpi': 'resources/icons/icon-hdpi.png',
   'android_xhdpi': 'resources/icons/icon-xhdpi.png'
 });*/
+App.accessRule('*');
 App.accessRule('*.google.com/*');
 App.accessRule('*.googleapis.com/*');
+
 App.accessRule('*.gstatic.com/*');

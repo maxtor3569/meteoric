@@ -1,7 +1,10 @@
 $loading-font-size: 22px;
 
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+// @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+// @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+@import 'meteoric_ionic-sass/ionic';
+@import 'meteoric_ionicons-sass/ionicons';
 
 .contact-detail {
   background: $stable;
@@ -25,4 +28,10 @@ body.keyboard-open .platform-android .content.overflow-scroll {
   border-color:#007095!important;
   background-color:#007095!important;
 
+}
+/*.modal {
+  height:100%
+}*/
+.close {
+  cursor:pointer;
 }

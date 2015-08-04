@@ -1,0 +1,293 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "fourseven:scss",
+      "constraint": "2.0.0"
+    }
+  ],
+  "implies": [
+    {
+      "package": "fourseven:scss",
+      "constraint": ""
+    }
+  ],
+  "resources": [
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_action-sheet.scss",
+      "length": 1537,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_action-sheet.scss",
+      "path": "stylesheets/_action-sheet.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_animations.scss",
+      "length": 1153,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_animations.scss",
+      "path": "stylesheets/_animations.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_backdrop.scss",
+      "length": 354,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_backdrop.scss",
+      "path": "stylesheets/_backdrop.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_badge.scss",
+      "length": 1504,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_badge.scss",
+      "path": "stylesheets/_badge.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_bar.scss",
+      "length": 9258,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_bar.scss",
+      "path": "stylesheets/_bar.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_button-bar.scss",
+      "length": 854,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_button-bar.scss",
+      "path": "stylesheets/_button-bar.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_button.scss",
+      "length": 6427,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_button.scss",
+      "path": "stylesheets/_button.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_checkbox.scss",
+      "length": 4623,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_checkbox.scss",
+      "path": "stylesheets/_checkbox.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_form.scss",
+      "length": 5955,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_form.scss",
+      "path": "stylesheets/_form.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_grid.scss",
+      "length": 2831,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_grid.scss",
+      "path": "stylesheets/_grid.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_items.scss",
+      "length": 19481,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_items.scss",
+      "path": "stylesheets/_items.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_list.scss",
+      "length": 2373,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_list.scss",
+      "path": "stylesheets/_list.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_loading.scss",
+      "length": 822,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_loading.scss",
+      "path": "stylesheets/_loading.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_menu.scss",
+      "length": 996,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_menu.scss",
+      "path": "stylesheets/_menu.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_mixins.scss",
+      "length": 14982,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_mixins.scss",
+      "path": "stylesheets/_mixins.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_modal.scss",
+      "length": 2044,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_modal.scss",
+      "path": "stylesheets/_modal.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_platform.scss",
+      "length": 1563,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_platform.scss",
+      "path": "stylesheets/_platform.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_popover.scss",
+      "length": 2947,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_popover.scss",
+      "path": "stylesheets/_popover.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_popup.scss",
+      "length": 1969,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_popup.scss",
+      "path": "stylesheets/_popup.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_progress.scss",
+      "length": 158,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_progress.scss",
+      "path": "stylesheets/_progress.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_radio.scss",
+      "length": 1198,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_radio.scss",
+      "path": "stylesheets/_radio.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_range.scss",
+      "length": 2834,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_range.scss",
+      "path": "stylesheets/_range.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_reset.scss",
+      "length": 6817,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_reset.scss",
+      "path": "stylesheets/_reset.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_scaffolding.scss",
+      "length": 7281,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_scaffolding.scss",
+      "path": "stylesheets/_scaffolding.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_select.scss",
+      "length": 2594,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_select.scss",
+      "path": "stylesheets/_select.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_slide-box.scss",
+      "length": 825,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_slide-box.scss",
+      "path": "stylesheets/_slide-box.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_tabs.scss",
+      "length": 13088,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_tabs.scss",
+      "path": "stylesheets/_tabs.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_toggle.scss",
+      "length": 3756,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_toggle.scss",
+      "path": "stylesheets/_toggle.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_transitions.scss",
+      "length": 6635,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_transitions.scss",
+      "path": "stylesheets/_transitions.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_type.scss",
+      "length": 2838,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_type.scss",
+      "path": "stylesheets/_type.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_util.scss",
+      "length": 4029,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_util.scss",
+      "path": "stylesheets/_util.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/stylesheets/_variables.scss",
+      "length": 30516,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/stylesheets/_variables.scss",
+      "path": "stylesheets/_variables.scss"
+    },
+    {
+      "type": "asset",
+      "file": "os/packages/meteoric:ionic-sass/_ionic.scss",
+      "length": 830,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass/_ionic.scss",
+      "path": "_ionic.scss"
+    },
+    {
+      "type": "prelink",
+      "file": "os/packages/meteoric:ionic-sass.js",
+      "length": 0,
+      "offset": 0,
+      "servePath": "/packages/meteoric:ionic-sass.js",
+      "sourceMap": "os/packages/meteoric:ionic-sass.js.map"
+    }
+  ]
+}

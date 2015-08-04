@@ -44,10 +44,10 @@ Router.map(function() {
        if (Meteor.userId()) {
          Meteor.logout()
        }
-       this.next();
+       //this.next();
      },
      onAfterAction: function () {
-       this.redirect('/');
+       Router.go('map');
      }
    });
   this.route('map', {
