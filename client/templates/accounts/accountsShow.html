@@ -8,7 +8,13 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear" data-ion-modal="_contactsEdit" data-id="{{ player._id }}">Edit</button>
+  {{ #if currentUser }}
+    {{ #if $eq currentUser._id player._id }}
+    <button class="button button-clear" data-ion-modal="_contactsEdit" data-id="{{ player._id }}">
+      Edit
+    </button>
+    {{ /if }}
+  {{ /if }}
   {{/contentFor}}
 
   {{#ionView}}

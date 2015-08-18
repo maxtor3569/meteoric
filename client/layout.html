@@ -5,9 +5,6 @@
       {{#ionSideMenus}}
 
         {{#ionSideMenu}}
-          <div class="bar bar-header bar-dark">
-            <h1 class="title">Menu</h1>
-          </div>
           <div class="content has-header">
             <div class="list">
               <a data-action="addGame" data-ion-modal="_addGame">
@@ -41,6 +38,7 @@
 
         {{#ionNavView}}
           {{> yield}}
+
         {{/ionNavView}}
 
       {{/ionSideMenuContent}}
@@ -49,4 +47,9 @@
 
   {{/ionBody}}
 
+{{#if isPhone}}
+  <div style="width: 100%;position: absolute;bottom: 0;left: 0;z-index: 999999999999999;background-color: #FFDC00;text-align:center;padding:20px">
+    For better experience use our android or ios application
+  </div>
+  {{/if}}
 </template>

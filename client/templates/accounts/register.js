@@ -2,6 +2,9 @@ Template.signup.helpers({
   userSchema: function () {
     return Schema.User;
   },
+  sports: function(){
+    return Sports.find({});
+  }
 
 
 });
@@ -9,6 +12,7 @@ Template.signup.helpers({
 Template.signup.created = function () {
   this.autorun(function () {
     this.subscription = Meteor.subscribe('players');
+    this.subscription = Meteor.subscribe('sports');
   }.bind(this));
 };
 
@@ -19,7 +23,8 @@ Template.signup.events({
     var email = e.target.email.value,
     password = e.target.password.value
     ;
-    var profile = {firstName:e.target.firstName.value,lastName:e.target.lastName.value};
+    var sports = $('#sports').val();
+    var profile = {firstName:e.target.firstName.value,lastName:e.target.lastName.value,sports:sports};
 
     Accounts.createUser(
       {

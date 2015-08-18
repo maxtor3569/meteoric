@@ -182,7 +182,14 @@ Schema.User = new SimpleSchema({
     type: Object,
     optional: true,
     blackbox: true
-  }
+  },
+  roles: {
+       type: Object,
+       blackbox:true,
+       optional: true
+
+   },
+
 
 
 

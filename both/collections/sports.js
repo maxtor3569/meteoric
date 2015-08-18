@@ -8,8 +8,6 @@ Schemas.Sports = new SimpleSchema({
         optional : true
     },
 
-
-
 });
 
 Sports.attachSchema(Schemas.Sports);

@@ -1,44 +1,48 @@
 <template name="signup">
   {{#contentFor "headerButtonLeft"}}
-  {{>ionNavBackButton path="map" }}
+    {{>ionNavBackButton path="map" }}
   {{/contentFor}}
   {{#contentFor "headerTitle"}}
-  <h1 class="title">Sign up</h1>
+  <h1 class="title">{{_ "Sign up" }}</h1>
   {{/contentFor}}
   {{#ionView}}
   {{#ionContent}}
   <form id="signUp" novalidate="novalidate">
     <label class="item item-input">
-      <span class="input-label">Email</span>
+      <span class="input-label">{{_ "Email" }}</span>
       <input type="text" name="email" required="">
     </label>
 
     <label class="item item-input">
-      <span class="input-label">Password</span>
+      <span class="input-label">{{_ "Password" }}</span>
       <input type="text" name="password">
     </label>
 
     <label class="item item-input">
-
-      <span class="input-label">First name</span>
+      <span class="input-label">{{_ "First name" }}</span>
       <input type="text" name="firstName">
-
     </label>
 
     <label class="item item-input">
-
-      <span class="input-label">Last name</span>
-
+      <span class="input-label">{{_ "Last name" }}</span>
       <input type="text" name="lastName">
-
+    </label>
+    <label class="item item-input">
+      <span class="input-label">{{_ "Sports you are playing" }}</span>
+      <select id="sports" name="sports[]" multiple="multiple">
+        {{ #each sports }}
+          <option value="{{ _id }}">{{ label }}</option>
+        {{ /each }}
+      </select>
     </label>
 
     <div class="form-group">
-      <button type="submit" class="button button-positive button-block">Register</button>
+      <button type="submit" class="button button-positive button-block">{{_ "Sign up" }}</button>
     </div>
 
 
   </form>
   {{/ionContent}}
   {{/ionView}}
+
 </template>

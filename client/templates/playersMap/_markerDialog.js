@@ -89,14 +89,14 @@ Template._markerDialog.events({
       var template = Template.instance();
       console.log(template.data);
       //var game = Games.findOne({_id: template.data});
-      
+
       Push.send({
-        from: 'Test',
-        title: 'Hello',
-        text: 'World',
+        from: 'Teamsport from',
+        title: 'Teamsport',
+        text: 'A player want to play',
         badge: 12,
         query: {
-          userId: template.data._id
+          //userId: template.data._id
         }
       });
 

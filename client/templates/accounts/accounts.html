@@ -3,33 +3,35 @@
     {{>ionNavBackButton}}
   {{/contentFor}}
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Login</h1>
+    <h1 class="title">{{_ "Login" }}</h1>
   {{/contentFor}}
-
-
   {{#ionView}}
     {{#ionContent}}
       {{#if currentUser}}
         <div class="padding">
-          <button class="button button-positive button-block" data-action="logout">Log Out</button>
+          <button class="button button-positive button-block" data-action="logout">{{_ "Log Out" }}</button>
         </div>
       {{else}}
+      <div id="errors-login"></div>
       <form id="signIn" novalidate="novalidate">
         <label class="item item-input">
-          <span class="input-label">Email</span>
+          <span class="input-label">{{_ "Email" }}</span>
           <input type="text" name="email" required="">
         </label>
 
         <label class="item item-input">
-          <span class="input-label">Password</span>
+          <span class="input-label">{{_ "Password" }}</span>
           <input type="text" name="password">
         </label>
 
         <div class="form-group">
-          <button type="submit" class="button button-positive  button-block">Login</button>
+          <button type="submit" class="button button-positive  button-block">{{_ "Login" }}</button>
         </div>
       </form>
-         Don't have an account yet <a href="signup">Register</a>
+         <div class="text-center">
+           {{_ "Don't have an account yet?" }}
+           <a href="signup">{{_ "Register" }}</a>
+         </div>
       {{/if}}
     {{/ionContent}}
   {{/ionView}}
